@@ -118,6 +118,7 @@ namespace Microsoft.EntityFrameworkCore.Tools
             }
             else if (targetFramework.Identifier == ".NETCoreApp")
             {
+                var efToolPath = @"C:\Users\tamirdr\source\repos\tamirdresher\efcore\artifacts\bin\ef\Debug\netcoreapp2.0\";
                 if (targetFramework.Version < new Version(2, 0))
                 {
                     throw new CommandException(
@@ -128,6 +129,10 @@ namespace Microsoft.EntityFrameworkCore.Tools
                 args.Add("exec");
                 args.Add("--depsfile");
                 args.Add(depsFile);
+
+                args.Add("--additional-deps");
+                args.Add(Path.Combine(efToolPath, @"ef.deps.json"));
+                
 
                 if (!string.IsNullOrEmpty(projectAssetsFile))
                 {
@@ -155,7 +160,8 @@ namespace Microsoft.EntityFrameworkCore.Tools
                     args.Add(startupProject.RuntimeFrameworkVersion);
                 }
 
-                args.Add(Path.Combine(toolsPath, "netcoreapp2.0", "any", "ef.dll"));
+                //args.Add(Path.Combine(toolsPath, "netcoreapp2.0", "any", "ef.dll"));
+                args.Add(Path.Combine(efToolPath, @"ef.dll"));
             }
             else if (targetFramework.Identifier == ".NETStandard")
             {

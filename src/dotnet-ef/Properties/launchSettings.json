@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "dotnet-ef": {
+      "commandName": "Project",
+      "commandLineArgs": "dbcontext list --project Model --startup-project WebApi --no-build",
+      "workingDirectory": "C:\\Users\\tamirdr\\Source\\Repos\\billing-template-netcore-api-service\\"
+    }
+  }
+}

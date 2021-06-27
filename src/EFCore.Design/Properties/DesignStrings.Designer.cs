@@ -383,7 +383,7 @@ namespace Microsoft.EntityFrameworkCore.Internal
                 columnName);
 
         /// <summary>
-        ///     The provider '{provider}' is not a Relational provider and therefore cannot be use with Migrations.
+        ///     The provider '{provider}' is not a Relational provider and therefore cannot be used with Migrations.
         /// </summary>
         public static string NonRelationalProvider([CanBeNull] object provider)
             => string.Format(
@@ -455,7 +455,7 @@ namespace Microsoft.EntityFrameworkCore.Internal
                 providerTypeName);
 
         /// <summary>
-        ///     No files were generated in directory '{outputDirectoryName}'. The following file(s) already exist and must be made writeable to continue: {readOnlyFiles}.
+        ///     No files were generated in directory '{outputDirectoryName}'. The following file(s) already exist(s) and must be made writeable to continue: {readOnlyFiles}.
         /// </summary>
         public static string ReadOnlyFiles([CanBeNull] object outputDirectoryName, [CanBeNull] object readOnlyFiles)
             => string.Format(
